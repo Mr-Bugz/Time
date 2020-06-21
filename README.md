@@ -1,2 +1,49 @@
 # Time
-This program computes time, current, user set and convert milliseconds to hour:minute:second
+This class computes time, current, user set and converts milliseconds to hour:minute:second
+
+public class Time {
+	// Data fields representing time
+	private int hour = (int)((System.currentTimeMillis() / (1000*60*60)) % 24);
+	private int minute = (int)((System.currentTimeMillis() / (1000*60)) % 60);
+	private int second = (int)(System.currentTimeMillis() / 1000) % 60;
+	
+	// no-arg constructor
+	public Time() {
+	}
+	/* Time object elapsed time since midnight, 
+	January 1, 1970, in milliseconds */
+	public Time(long newElapsedTime) {
+		this.hour = (int)(newElapsedTime / (1000*60*60)) % 24;
+		this.minute = (int)(newElapsedTime / (1000*60)) % 60;
+		this.second = (int)(newElapsedTime / 1000) % 60;	
+	}
+	// Overloaded constructor
+	public Time(int newHour, int newMinute, int newSecond) {
+		this.hour = newHour;
+		this.minute = newMinute;
+		this.second = newSecond;
+	}
+	
+	// getter methods for hour, minute, second
+	public int getHour() {
+		return hour;
+	}
+	public int getMinute() {
+		return minute;
+	}
+	public int getSecond() {
+		return second;
+	}
+	
+	// Setter method to set time (long)
+	public void setTime(long elapseTime) {
+		this.hour = (int)(elapseTime / (1000*60*60)) % 24;
+		this.minute = (int)(elapseTime / (1000*60)) % 60;
+		this.second = (int)(elapseTime / 1000) % 60;
+	}
+	
+	// Return String description of time
+	public String toString() {
+		return hour + ":" + minute + ":" + second;
+	}
+}
