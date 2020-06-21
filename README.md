@@ -1,10 +1,5 @@
 # Time
-This class computes time, current, user set and converts milliseconds to hour:minute:second
-
-
-
-
-
+//This class computes time, current, user set and converts milliseconds to hour:minute:second
 
 public class Time {
 	// Data fields representing time
