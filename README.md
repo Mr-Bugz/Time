@@ -1,6 +1,11 @@
 # Time
 This class computes time, current, user set and converts milliseconds to hour:minute:second
 
+
+
+
+
+
 public class Time {
 	// Data fields representing time
 	private int hour = (int)((System.currentTimeMillis() / (1000*60*60)) % 24);
